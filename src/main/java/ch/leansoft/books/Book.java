@@ -1,12 +1,19 @@
 package ch.leansoft.books;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Book {
+	@Id
 	private String id;
 	private String title;
 	private String author;
 	private String publicationDate;
 	private String publisher;
 	private double price;
+
+	public Book(){};
 	
 	public Book(String id, String title, String author, String publicationDate, String publisher, double price) {
 		super();

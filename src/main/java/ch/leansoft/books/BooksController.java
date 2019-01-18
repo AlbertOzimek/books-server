@@ -19,8 +19,8 @@ public class BooksController {
 	
 	@RequestMapping("/books/{id}")
     @CrossOrigin
-	public Book getBook(@PathVariable String id) {
-		return this.bookService.getBook(id);
+	public void getBook(@PathVariable String id) {
+		this.bookService.getBook(id);
 	}
 
 	@RequestMapping(method = RequestMethod.POST, value = "/books")
