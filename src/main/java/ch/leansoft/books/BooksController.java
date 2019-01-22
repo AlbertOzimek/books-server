@@ -9,10 +9,13 @@ public class BooksController {
 	
 	@Autowired
 	private BookService bookService;
-	
+
 	@RequestMapping("/books")
     @CrossOrigin
 	public List<Book> getAllBooks() {
+		if(this.bookService.getAllBooks().isEmpty()) {
+			this.bookService.createMockData(); // TODO: remove this
+		}
 		return this.bookService.getAllBooks();
 	
 	}

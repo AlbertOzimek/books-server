@@ -14,12 +14,14 @@ public class BookService {
     @Autowired
     private BookRepository bookRepository;
 
-/*
-    private List<Book> books = new ArrayList<Book>(Arrays.asList(
-            new Book("111", "Eine kurze Geschichte der Menscheit", "Yuval Noah Harari", "2016", "DVA", 36),
-            new Book("222", "Homo Deus", "Yuval Noah Harari", "2017", "CHBECK", 37),
-            new Book("333", "21 Lektionen", "Yuval Noah Harari", "2017", "CHBECK", 37)));
-*/
+    public void createMockData() {
+        // TODO: remove hardcoded code
+        List<Book> books = new ArrayList<Book>(Arrays.asList(
+                new Book("111", "Eine kurze Geschichte der Menscheit", "Yuval Noah Harari", "2016", "DVA", 36),
+                new Book("222", "Homo Deus", "Yuval Noah Harari", "2017", "CHBECK", 37),
+                new Book("333", "21 Lektionen", "Yuval Noah Harari", "2017", "CHBECK", 37)));
+        this.bookRepository.saveAll(books);
+    }
 
     public List<Book> getAllBooks() {
         List<Book> books = new ArrayList<Book>();
